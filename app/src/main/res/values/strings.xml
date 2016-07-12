@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RUS run</string>
+
+    <string name="signup">Sign Up</string>
 </resources>
