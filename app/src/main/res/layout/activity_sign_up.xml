@@ -34,7 +34,8 @@
         android:layout_above="@+id/button3"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"
-        android:padding="15dp">
+        android:padding="15dp"
+        android:background="#5a4e4e4e">
 
         <LinearLayout
             android:orientation="horizontal"
