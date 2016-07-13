@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="rus.praneet.jiraporn.rusrun.MainActivity">
+    tools:context="rus.praneet.jiraporn.rusrun.MainActivity"
+    android:background="@drawable/wallpapers_a_07">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -20,7 +21,9 @@
             android:layout_height="wrap_content"
             android:text="Sign In"
             android:id="@+id/button"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:textColor="@color/text"
+            android:textColorHint="@color/text" />
 
         <Button
             android:layout_width="wrap_content"
@@ -28,6 +31,51 @@
             android:text="@string/signup"
             android:id="@+id/button2"
             android:layout_weight="1"
-            android:onClick="clickSignUpMain" />
+            android:onClick="clickSignUpMain"
+            android:textColor="@color/text"
+            android:textColorHint="@color/text" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:padding="30dp"
+        android:background="#78ffffff">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView6" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:id="@+id/textView6"
+            android:textSize="@dimen/h1"
+            android:textStyle="bold"
+            android:textColor="@color/text"
+            android:textColorHint="@color/text" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText4"
+            android:hint="User : "
+            android:inputType="text"
+            android:textColor="@color/text"
+            android:textColorHint="@color/text" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText5"
+            android:hint="Password :"
+            android:inputType="textPassword|none"
+            android:textColor="@color/text"
+            android:textColorHint="@color/text" />
     </LinearLayout>
 </RelativeLayout>

@@ -25,7 +25,7 @@ public class SignUpActivity extends AppCompatActivity {
     private RadioButton avata0RadioButton, avata1RadioButton,
             avata2RadioButton, avata3RadioButton, avata4RadioButton;
     private String nameString, userString, passwordString, avataString;
-    private static final String urlPHP = "http://swiftcodingthai.com/rus/add_user_master.php";
+    private static final String urlPHP = "http://swiftcodingthai.com/rus/add_user_master.php'";
 
 
 
