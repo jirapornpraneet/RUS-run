@@ -14,6 +14,7 @@ public class SignUpActivity extends AppCompatActivity {
     private RadioGroup radioGroup;
     private RadioButton avata0RadioButton, avata1RadioButton,
             avata2RadioButton, avata3RadioButton, avata4RadioButton;
+    private String nameString, userString, passwordString, avataString;
 
 
 
@@ -36,6 +37,12 @@ public class SignUpActivity extends AppCompatActivity {
     }//Main Method
 
     public void clickSignUpSign (View view){
+
+        //Get Value from Edit Text
+        nameString = nameEditText.getText().toString().trim();
+        userString = userEditText.getText().toString().trim();
+        passwordString = passwordEditText.getText().toString().trim();
+
 
     } //clickSignUp
 
