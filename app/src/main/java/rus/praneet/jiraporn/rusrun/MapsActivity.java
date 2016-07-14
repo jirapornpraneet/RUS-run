@@ -16,6 +16,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private double latRusADouble = 13.859132;
     private double lngRusADouble = 100.481989;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
