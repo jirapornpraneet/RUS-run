@@ -1,5 +1,6 @@
 package rus.praneet.jiraporn.rusrun;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -39,10 +40,32 @@ public class MainActivity extends AppCompatActivity {
     //Create Inner Class
     private class SynUser extends AsyncTask<Void, Void, String> {
 
+        //Explicit
+        private String myJSONString, myUserString, myPasswordString;
+        private Context context;
+
+        public SynUser(String myJSONString,
+                       String myUserString,
+                       String myPasswordString,
+                       Context context) {
+            this.myJSONString = myJSONString;
+            this.myUserString = myUserString;
+            this.myPasswordString = myPasswordString;
+            this.context = context;
+        }
+
         @Override
         protected String doInBackground(Void... voids) {
+
+
+
             return null;
         } //doInBack
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+        } //onPost
 
 
     } //SynUser Class
@@ -61,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
                     "Please Fill All Every Blank");
         } else {
             //No space
+            SynUser synUser = new SynUser(urlJSON, userString, passwordString, this);
+            synUser.execute();
 
         } //if
 
