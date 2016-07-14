@@ -123,6 +123,9 @@ public class MainActivity extends AppCompatActivity {
                     //Password True
                     Toast.makeText(context, "Welcome " + myNameString, Toast.LENGTH_SHORT).show();
 
+                    Intent intent = new Intent(MainActivity.this, MapsActivity.class);
+                    startActivity(intent);
+
                 } else {
                     //Password False
                     MyAlert myAlert = new MyAlert();
