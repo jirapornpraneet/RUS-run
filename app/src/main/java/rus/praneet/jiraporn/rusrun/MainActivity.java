@@ -53,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
         private Context context;
         private boolean statusABoolean = true;
         private String truePassword;
+        private String myNameString, myIDString, myAvataString ;
+
 
 
 
@@ -103,6 +105,9 @@ public class MainActivity extends AppCompatActivity {
 
                         statusABoolean = false;
                         truePassword = jsonObject.getString("Password");
+                        myNameString = jsonObject.getString("Name");
+                        myIDString = jsonObject.getString("id");
+                        myAvataString = jsonObject.getString("Avata");
 
                     }
 
@@ -116,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
                 } else if (myPasswordString.equals(truePassword)) {
                     //Password True
-                    Toast.makeText(context, "Welcome", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Welcome " + myNameString, Toast.LENGTH_SHORT).show();
 
                 } else {
                     //Password False
