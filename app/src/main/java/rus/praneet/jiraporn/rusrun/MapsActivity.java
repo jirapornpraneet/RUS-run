@@ -16,6 +16,15 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.squareup.okhttp.Call;
+import com.squareup.okhttp.Callback;
+import com.squareup.okhttp.FormEncodingBuilder;
+import com.squareup.okhttp.OkHttpClient;
+import com.squareup.okhttp.Request;
+import com.squareup.okhttp.RequestBody;
+import com.squareup.okhttp.Response;
+
+import java.io.IOException;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
@@ -147,6 +156,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //To Do
         Log.d("RusV3", "latUser ==> " + latUserADouble);
         Log.d("RusV3", "lngUser ==> " + lngUserADouble);
+        
+        //Edit Lat,Lng on Server
+        editLatLngOnServer();
 
         //Delay
         Handler handler = new Handler();
@@ -159,5 +171,36 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
     } // myLoop
+
+    private void editLatLngOnServer() {
+
+        String urlPHP = "http://swiftcodingthai.com/rus/edit_location_master.php";
+
+
+        OkHttpClient okHttpClient = new OkHttpClient();
+        RequestBody requestBody = new FormEncodingBuilder()
+                .add("isAdd", "true")
+                .add("id", getIntent().getStringExtra("loginID"))
+                .add("Lat", Double.toString(latUserADouble))
+                .add("Lng", Double.toString(lngUserADouble))
+                .build();
+        Request.Builder builder = new Request.Builder();
+        Request request = builder.url(urlPHP).post(requestBody).build();
+        Call call = okHttpClient.newCall(request);
+        call.enqueue(new Callback() {
+            @Override
+            public void onFailure(Request request, IOException e) {
+            }
+
+            @Override
+            public void onResponse(Response response) throws IOException {
+
+            }
+        });
+
+
+
+    } //editLatLng
+
 
 }  //main Class
