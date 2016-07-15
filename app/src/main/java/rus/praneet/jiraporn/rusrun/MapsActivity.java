@@ -271,7 +271,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 latUserADouble, lngUserADouble);
         Log.d("RusV5", "Distance ==>" + userDistance);
 
+        if (userDistance < 10) {
+            if (distanceABoolean) {
 
+                MyAlert myAlert = new MyAlert();
+                myAlert.myDialog(this,"ถึงฐานแล้ว", "คุณเข้าใกล้ต่ำกว่า 10 เมตรแล้ว");
+                distanceABoolean = false;
+            }
+
+        } //if1
 
         //Delay
         Handler handler = new Handler();
